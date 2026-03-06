@@ -1,0 +1,105 @@
+:root {
+    --primary: #3994ef;
+    --bg-body: #f6f7f8;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-soft: rgba(57, 148, 239, 0.1);
+    --border-strong: #e2e8f0;
+    --bg-input: #f1f5f9;
+}
+
+html.dark {
+    --bg-body: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-soft: rgba(255, 255, 255, 0.05);
+    --border-strong: #334155;
+    --bg-input: #0f172a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global Elements */
+main {
+    flex: 1;
+    padding: 2rem 1rem;
+    max-width: 960px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Results View Specifics */
+.city-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.city-title h1 { font-size: 2.25rem; font-weight: 900; letter-spacing: -0.03em; }
+
+.weather-card {
+    background: var(--bg-card);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-strong);
+}
+
+.temp-main { font-size: 5.25rem; font-weight: 900; line-height: 1; margin: 0.5rem 0; }
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-strong);
+}
+
+@media (min-width: 768px) { .metrics-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.metric-item {
+    background: var(--bg-body);
+    padding: 1.25rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.metric-item .material-symbols-outlined { color: var(--primary); margin-bottom: 0.5rem; }
+
+.forecast-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-card);
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-strong);
+}
+
+.bar-track {
+    width: 100px; height: 6px; background: var(--bg-input); border-radius: 10px; position: relative;
+}
+
+.bar-active {
+    position: absolute; height: 100%; background: var(--primary); border-radius: 10px;
+}
